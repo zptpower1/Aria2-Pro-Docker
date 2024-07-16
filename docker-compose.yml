@@ -17,10 +17,13 @@ services:
       - UPDATE_TRACKERS=true
       - CUSTOM_TRACKER_URL=
       - TZ=Asia/Shanghai
+      - HTTP_PROXY=http://192.168.100.13:7890
+      - HTTPS_PROXY=http://192.168.100.13:7890
+      - NO_PROXY=localhost,127.0.0.1,.example.com
     volumes:
-      - /Container/aria2pro/config:/config
-      - /Downloads:/downloads
-      - /Container/aria2pro/data:/opt/alist/data
+      - /share/Container/aria2pro/config:/config
+      - /share/Downloads:/downloads
+#     - /Container/aria2pro/data:/opt/alist/data
 # If you use host network mode, then no port mapping is required.
 # This is the easiest way to use IPv6 networks.
     network_mode: host
